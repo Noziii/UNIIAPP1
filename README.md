@@ -18,7 +18,7 @@ npx create-expo-app -e with-router
 - Download expo Go on your device
 - Log into your email once Expo is open
 
-- Scan QR bard code provided below
+- Scan QR provided in pdf file
 
 
 
