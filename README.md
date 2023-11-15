@@ -19,3 +19,5 @@ npx create-expo-app -e with-router
 - Log into your email once Expo is open
 
 - Scan QR bard code provided below
+
+- ![Screenshot](c-food.png)
