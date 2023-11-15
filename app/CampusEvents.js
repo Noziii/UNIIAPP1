@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Calendar } from "react-native-calendars";
 
 class CampusEvents extends Component {
@@ -9,10 +9,10 @@ class CampusEvents extends Component {
     this.state = {
       selectedDate: null,
       events: {
-        "2023-10-01": [{ name: "WITS Freshers" }],
-        "2023-10-20": [{ name: "De-Stress Zone" }],
-        "2023-10-15": [{ name: "SANB (Blood Drive)" }],
-        "2023-10-16": [{ name: "Checkers giveaway" }],
+        "2023-11-01": [{ name: "WITS Freshers", time: "10:00 AM" }],
+        "2023-11-20": [{ name: "De-Stress Zone", time: "2:00 PM" }],
+        "2023-11-15": [{ name: "SANB (Blood Drive)", time: "11:30 AM" }],
+        "2023-11-16": [{ name: "Checkers giveaway", time: "3:30 PM" }],
       },
     };
   }
@@ -25,11 +25,11 @@ class CampusEvents extends Component {
   render() {
     const markedDates = {};
     Object.keys(this.state.events).forEach((date) => {
-      markedDates[date] = { marked: true, dotColor: "orange" };
+      markedDates[date] = { marked: true, dotColor: "#75a9f9" };
     });
 
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Calendar
           onDayPress={(day) => this.handleDayPress(day)}
           markedDates={{
@@ -54,16 +54,17 @@ class CampusEvents extends Component {
             <Text style={styles.selectedDate}>
               {this.state.selectedDate.dateString}
             </Text>
-            <Text style={styles.eventText}>Event:</Text>
+            <Text style={styles.eventText}>Events:</Text>
             {this.state.selectedEvents &&
               this.state.selectedEvents.map((event, index) => (
-                <Text key={index} style={styles.eventText}>
-                  {event.name}
-                </Text>
+                <View key={index} style={styles.eventCard}>
+                  <Text style={styles.eventName}>{event.name}</Text>
+                  <Text style={styles.eventTime}>{event.time}</Text>
+                </View>
               ))}
           </View>
         )}
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -73,7 +74,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#75a9f9",
     borderRadius: 8,
-    height: 200,
   },
   eventContainer: {
     backgroundColor: "white",
@@ -92,10 +92,22 @@ const styles = StyleSheet.create({
   selectedDate: {
     fontSize: 18,
     fontWeight: "bold",
+    marginBottom: 8,
   },
   eventText: {
     fontSize: 16,
-    marginTop: 8,
+    fontWeight: "bold",
+    marginBottom: 8,
+  },
+  eventCard: {
+    marginBottom: 8,
+  },
+  eventName: {
+    fontSize: 16,
+  },
+  eventTime: {
+    fontSize: 14,
+    color: "gray",
   },
 });
 
