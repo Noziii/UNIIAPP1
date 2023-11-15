@@ -13,4 +13,9 @@ npx create-expo-app -e with-router
 - [Expo Router: Docs](https://expo.github.io/router)
 - [Expo Router: Repo](https://github.com/expo/router)
 
-#How to use the App
+# How to use the App
+
+- Download expo Go on your device
+- Log into your email once Expo is open
+
+- Scan QR bard code provided below
