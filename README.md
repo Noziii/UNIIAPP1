@@ -20,4 +20,4 @@ npx create-expo-app -e with-router
 
 - Scan QR bard code provided below
 
-- ![Screenshot](c-food.png)
+
