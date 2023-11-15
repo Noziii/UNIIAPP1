@@ -20,7 +20,7 @@ const App = () => {
       <Stack.Screen name="CampusEvents" component={CampusEvents} />
       <Stack.Screen name="Res" component={Res} />
       <Stack.Screen name="LocalHotspots" component={LocalHotspots} />
-      <Stack.Screen name="MateixGO" component={MatrixGo} />
+      <Stack.Screen name="MatrixGO" component={MatrixGo} />
       <Stack.Screen name="Restaurant" component={RestaurantScreen} />
       <Stack.Screen
         name="Cart"
